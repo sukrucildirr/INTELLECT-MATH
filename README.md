@@ -13,7 +13,7 @@
 
 This repository contains code for reproducing Notus-7B, a state-of-the-art 7B parameter model for mathematical reasoning. 
 
-The core insight behind Notus-7B is the following: By fine-tuning on synthetic reasoning data obtained from a strong teacher model (QwQ-32B), we can provide a better policy initialization for online reinforcement learning based on PRIME-RL. This way, we can match the performance of the existing SOTA model Eurus-2-7B-Prime with 10x less time spent on reinforcement learning, and outperform the model with further training.
+By fine-tuning on synthetic reasoning data obtained from a strong teacher model (QwQ-32B), we can provide a better policy initialization for online reinforcement learning based on PRIME-RL. This way, we can match the performance of the existing SOTA model Eurus-2-7B-Prime with 10x less time spent on reinforcement learning, and outperform the model with further training.
 
 ## Reproducing Notus-7B
 
