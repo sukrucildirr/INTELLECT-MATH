@@ -1,5 +1,5 @@
 <p align="center">
-<h2 align="center">Notus-7B: State-of-the-Art Mathematical Reasoning through Better Initializations for Reinforcement Learning</h1>
+<h2 align="center">INTELLECT-MATH: State-of-the-Art Mathematical Reasoning through Better Initializations for Reinforcement Learning</h1>
 </p>
 
 <p align="center">
@@ -7,19 +7,39 @@
 <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
 <a href="">🐦 X / Twitter</a>
 <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-<a href="">🤗 Hugging Face</a>
+<a href="">🤗 Weights & Data</a>
 </p>
 
 
-This repository contains code for reproducing Notus-7B, a state-of-the-art 7B parameter model for mathematical reasoning. 
+This repository contains code for reproducing INTELLECT-MATH, a state-of-the-art 7B parameter model for mathematical reasoning. 
 
-By fine-tuning on synthetic reasoning data obtained from a strong teacher model (QwQ-32B), we can provide a better policy initialization for online reinforcement learning based on PRIME-RL. This way, we can match the performance of the existing SOTA model Eurus-2-7B-Prime with 10x less time spent on reinforcement learning, and outperform the model with further training.
+INTELLECT-Math was trained in two stages: an initial SFT stage and a second online reinforcement learning stage based on [Process Reinforcement through Implicit Rewards](https://github.com/PRIME-RL/PRIME).
 
-## Reproducing Notus-7B
+By generating our SFT dataset with a strong teacher model like QwQ-32B, we can provide a better policy initialization for online reinforcement learning. This way, we can match the performance of the existing SOTA model Eurus-2-7B-Prime with 10x less time spent on reinforcement learning, and outperform the model with further training.
 
-You can reproduce Notus-7B step by step using the following code:
+## Reproducing INTELLECT-MATH
 
-1. `synthetic-data`: First, generate synthetic data from QwQ. We used this code to generate our SFT dataset [PrimeIntellect/Notus-7B-SFT-Data](https://huggingface.co/datasets/PrimeIntellect/Notus-7B-SFT-Data)
-2. `sft`: Next, fine-tune your SFT model with [open-instruct](https://github.com/allenai/open-instruct) using your synthetic dataset. We trained [PrimeIntellect/Notus-7B-SFT](https://huggingface.co/PrimeIntellect/Notus-7B-SFT) using [Qwen/Qwen2.5-Math-7B](https://huggingface.co/Qwen/Qwen2.5-Math-7B) as a base model.
-- `rl-and-evals`: Finally, train your SFT model with reinforcement learning using [PRIME-RL](https://github.com/PRIME-RL/PRIME). This last step was used to train [PrimeIntellect/Notus-7B](https://huggingface.co/PrimeIntellect/Notus-7B) from [PrimeIntellect/Notus-7B-SFT](https://huggingface.co/PrimeIntellect/Notus-7B-SFT).
+You can reproduce INTELLECT-MATH step by step using the following code:
 
+### 1) Generate the SFT Dataset
+
+To generate our SFT dataset, we used QwQ-32B to sample two responses for every question from the NuminaMath dataset. Keeping only the correct responses, we are left with [PrimeIntellect/INTELLECT-MATH-7B-SFT-Data](https://huggingface.co/datasets/PrimeIntellect/INTELLECT-MATH-7B-SFT-Data), a dataset containing 733k questions and responses.
+
+You can use the code in `synthetic-data` to generate an SFT dataset:
+```
+cd synthetic-data
+
+# install requirements
+pip install -r requirements.txt
+
+# generate data, sampling two responses per question
+python generate.py --num_responses_per_question 2
+```
+
+### 2) Fine-tune a model on the synthetic SFT dataset
+
+We used [open-instruct](https://github.com/allenai/open-instruct) to fine-tune [Qwen/Qwen2.5-Math-7B](https://huggingface.co/Qwen/Qwen2.5-Math-7B) into [PrimeIntellect/INTELLECT-MATH-SFT](https://huggingface.co/PrimeIntellect/INTELLECT-MATH-SFT). The code for can be found in `sft`. Follow the README inside the folder to set up your environment - then you can reproduce our SFT model using the script `intellect-math-scripts/train_intellect_math_7b_sft.sh`.
+
+
+### 3) Online Reinforcement Learning on top of your SFT model
+Finally, you need to further train your SFT model with reinforcement learning using [PRIME-RL](https://github.com/PRIME-RL/PRIME). This last step was used to train [PrimeIntellect/INTELLECT-MATH](https://huggingface.co/PrimeIntellect/INTELLECT-MATH) from [PrimeIntellect/INTELLECT-MATH-SFT](https://huggingface.co/PrimeIntellect/INTELLECT-MATH-SFT). The code for this, along with evals, can be found in `rl-and-evals`. To reproduce our model, you can use the script `rl-and-evals/training/intellect-math-scripts/train_intellect_math_7b.sh`.

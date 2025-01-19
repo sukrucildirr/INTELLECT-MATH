@@ -1,7 +1,7 @@
 #!/bin/bash
 
 NUM_GPUS=8
-dataset_mixer_list=${dataset_mixer_list:-"PrimeIntellect/Notus-7B-SFT-Data 1.0"}
+dataset_mixer_list=${dataset_mixer_list:-"PrimeIntellect/INTELLECT-MATH-SFT-Data 1.0"}
 
 export CUDA_VISIBLE_DEVICES=$(seq -s, 0 $((NUM_GPUS-1)))
 
@@ -32,9 +32,9 @@ accelerate launch \
     --weight_decay 0.0 \
     --num_train_epochs 5 \
     --checkpointing_steps 300 \
-    --output_dir output/notus_7b_sft \
+    --output_dir output/intellect_math_7b_sft \
     --with_tracking true \
     --report_to wandb \
     --logging_steps 1 \
-    --dataset_mix_dir output/notus_7b_sft \
+    --dataset_mix_dir output/intellect_math_7b_sft \
     --save_hf_checkpoint true

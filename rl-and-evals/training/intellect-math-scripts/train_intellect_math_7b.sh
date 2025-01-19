@@ -9,7 +9,7 @@ export TOKENIZERS_PARALLELISM=true
 PROJECT_NAME='PRIME'
 EXPERIMENT_NAME='online-after-solvable-0.2-0.8-policy-self-ref'
 DATA_PATH=path/to/data
-SFT_MODEL_PATH=PrimeIntellect/Notus-7B-SFT
+SFT_MODEL_PATH=PrimeIntellect/INTELLECT-MATH-SFT
 CKPT_PATH=path/to/save/dir
 
 python3 -m verl.trainer.main_ppo \
