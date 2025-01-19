@@ -6,6 +6,7 @@ import re
 import signal
 import logging
 import sympy
+import json
 from sympy.parsing.latex import parse_latex
 from typing import Optional
 
