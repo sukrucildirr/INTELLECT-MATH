@@ -17,6 +17,16 @@ INTELLECT-Math was trained in two stages: an initial SFT stage and a second onli
 
 By generating our SFT dataset with a strong teacher model like QwQ-32B, we can provide a better policy initialization for online reinforcement learning. This way, we can match the performance of the existing SOTA model Eurus-2-7B-Prime with 10x less time spent on reinforcement learning, and outperform the model with further training.
 
+|      | Intellect-Math (Step 255) | Intellect-Math (Step 47) | Eurus-2-Prime (Step 592) | Intellect-Math-SFT | Eurus-2-SFT | Qwen-2.5-Math |
+|----------------|---------------------------:|--------------------------:|--------------------------:|--------------------:|------------:|-------------:|
+| **MATH-500**   | 82.0                      | 81.6                     | 79.2                     | 72.8               | 65.1        | 79.8         |
+| **OLYMPIADBENCH** | 49.5                   | 46.7                     | 42.1                     | 39.1               | 29.8        | 40.7         |
+| **AIME 2024**  | 26.7                      | 26.7                     | 26.7                     | 16.6               | 3.3         | 13.3         |
+| **AMC**        | 60.2                      | 57.8                     | 57.8                     | 45.8               | 30.1        | 50.6         |
+| **MINERVA MATH** | 39.7                    | 37.8                     | 38.6                     | 33.8               | 32.7        | 34.6         |
+| **AVG**        | 51.6                      | 50.1                     | 48.9                     | 41.6               | 32.2        | 43.8         |
+
+
 ## Reproducing INTELLECT-MATH
 
 You can reproduce INTELLECT-MATH step by step using the following code:
