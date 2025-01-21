@@ -2,6 +2,9 @@
 <h2 align="center">INTELLECT-MATH: State-of-the-Art Mathematical Reasoning through Better Initializations for Reinforcement Learning</h1>
 </p>
 
+![diagram-training-techniques](https://github.com/user-attachments/assets/81dc657f-5b37-4dc4-b1ba-42de9fb61e0a)
+
+
 <p align="center">
 <a href="">🔗 Blog Post</a>
 <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
@@ -9,9 +12,6 @@
 <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
 <a href="">🤗 Weights & Data</a>
 </p>
-
-
-![diagram-training-techniques](https://github.com/user-attachments/assets/81dc657f-5b37-4dc4-b1ba-42de9fb61e0a)
 
 
 
