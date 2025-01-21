@@ -11,6 +11,11 @@
 </p>
 
 
+![diagram-training-techniques](https://github.com/user-attachments/assets/81dc657f-5b37-4dc4-b1ba-42de9fb61e0a)
+
+
+
+
 This repository contains code for reproducing INTELLECT-MATH, a state-of-the-art 7B parameter model for mathematical reasoning. 
 
 INTELLECT-Math was trained in two stages: an initial SFT stage and a second online reinforcement learning stage based on [Process Reinforcement through Implicit Rewards](https://github.com/PRIME-RL/PRIME).
