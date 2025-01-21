@@ -27,6 +27,8 @@ By generating our SFT dataset with a strong teacher model like QwQ-32B, we can p
 | **AVG**        | 51.6                      | 50.1                     | 48.9                     | 41.6               | 32.2        | 43.8         |
 
 
+
+
 ## Reproducing INTELLECT-MATH
 
 You can reproduce INTELLECT-MATH step by step using the following code:
