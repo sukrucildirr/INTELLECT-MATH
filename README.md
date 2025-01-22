@@ -6,11 +6,11 @@
 
 
 <p align="center">
-<a href="">🔗 Blog Post</a>
+<a href="https://www.primeintellect.ai/blog/intellect-math">🔗 Blog Post</a>
 <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
 <a href="">🐦 X / Twitter</a>
 <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-<a href="">🤗 Weights & Data</a>
+<a href="https://huggingface.co/collections/PrimeIntellect/intellect-math-678a2a25d7c5d74b37b16581">🤗 Weights & Data</a>
 </p>
 <p>
   
