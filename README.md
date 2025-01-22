@@ -19,7 +19,7 @@
 
 
 
-This repository contains code for reproducing INTELLECT-MATH, a state-of-the-art 7B parameter model for mathematical reasoning. 
+This repository contains code for reproducing INTELLECT-MATH, a frontier 7B parameter model for mathematical reasoning. 
 
 INTELLECT-Math was trained in two stages: an initial SFT stage and a second online reinforcement learning stage based on [Process Reinforcement through Implicit Rewards](https://github.com/PRIME-RL/PRIME).
 
