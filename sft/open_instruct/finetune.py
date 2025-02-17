@@ -283,6 +283,9 @@ class FlatArguments:
         default=False,
         metadata={"help": "Whether to enable experiment trackers for logging."},
     )
+    save_hf_checkpoint: bool = field(
+        default=False,
+    )
     report_to: Union[str, List[str]] = field(
         default="all",
         metadata={
